@@ -1,0 +1,99 @@
+body {
+	overflow-y: scroll;
+}
+
+header {
+	background-color: #303030;
+	padding: 40px 0 70px;
+	margin-bottom: 20px;
+}
+
+header h1 {
+	font-size: 60px;
+}
+
+header h1 small {
+	font-size: 20px;
+}
+
+header h1, header form, header .alert, footer {
+	text-align: center;
+}
+
+#steam-id {
+	width: 500px;
+}
+
+#stuff {
+	display: none;
+}
+
+#stuff>div {
+	margin: 0 auto 20px;
+}
+
+#profile {
+	width: 400px;
+	padding: 15px;
+	background-color: #232323;
+	border-radius: 5px;
+}
+
+#profile>div>div {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#profile p {
+	margin-bottom: 0;
+}
+
+#profile .name {
+	font-weight: bold;
+}
+
+#profile .user .avatar {
+	width: 68px;
+	height: 68px;
+	border: 2px solid #343434;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+#profile .information, #profile .game {
+	display: none;
+	margin-top: 10px;
+}
+
+#profile .game .logo {
+	width: 124px;
+	height: 49px;
+	border: 2px solid #343434;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+#profile .game .name {
+	line-height: 49px;
+	height: 49px;
+	margin-right: 10px;
+	width: 160px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#profile .game .btn {
+	line-height: 27px;
+	height: 49px;
+}
+
+#forget {
+	margin: 0 auto !important;
+	text-align: center;
+}
+
+#faq {
+	text-align: center;
+	width: 800px;
+	margin: 0 auto 40px;
+}
