@@ -285,25 +285,29 @@ if (!empty($_GET['id'])) {
 				$forget.text("Back");
 			}
 
-			var doRequest = function() {
+			var doRequest = function(silent) {
 				$.ajax("?", {
 					type: "GET",
 					data: { "id": steamId },
 					success: function(data) {
 						if (data.error) {
-							alert(data.error);
-							forget(true);
+							if (!silent) {
+								alert(data.error);
+								forget(true);
+							}
 							return;
 						}
 						updateProfile(data);
 					},
 					error: function() {
-						alert("Server error, sorry.");
-						forget(true);
+						if (!silent) {
+							alert("Server error, sorry.");
+							forget(true);
+						}
 					}
 				});
 				clearTimeout(timer);
-				timer = setTimeout(doRequest, 60*1000);
+				timer = setTimeout(function() { doRequest(true); }, 60*1000);
 			}
 
 			$form.submit(function() {
