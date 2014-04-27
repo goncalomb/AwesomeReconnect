@@ -147,6 +147,9 @@ if (!empty($_GET['id'])) {
 
 			<h3>Why create this?</h3>
 			<p>I enjoy playing <a href="http://store.steampowered.com/app/204300/" target="_blank">Awesomenauts</a>, but sadly it lacks a rejoin button. When for some reason I lose the connection there is no way to find the same match. So I created this to keep track of the last match.</p>
+
+			<h3>How?</h3>
+			<p>Want to know how it works? <a href="https://github.com/goncalomb/AwesomeReconnect" target="_blank">Find the code on <strong>GitHub</strong></a>.</p>
 		</div>
 
 		<footer>
