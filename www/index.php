@@ -23,7 +23,39 @@ function steam_api_resolve_vanity($url) {
 	return (empty($result['response']['steamid']) ? null : $result['response']['steamid']);
 }
 
+$stats = null;
+function load_stats() {
+	global $stats;
+	if ($stats === null) {
+		$day = ceil(time()/(3600*24));
+		if (file_exists('stats.json.txt')) {
+			$stats = json_decode(file_get_contents('stats.json.txt'), true);
+			if ($day != $stats['Day']) {
+				$stats = null;
+			}
+		}
+		if (!$stats) {
+			$stats = array(
+				'Day' => $day,
+				'SteamAPI' => array(
+					'ResolveVanityURL' => 0,
+					'GetPlayerSummaries' => 0
+				)
+			);
+			save_stats();
+		}
+	}
+}
+
+function save_stats() {
+	global $stats;
+	if ($stats !== null) {
+		file_put_contents('stats.json.txt', json_encode($stats, JSON_PRETTY_PRINT));
+	}
+}
+
 function send_json($data) {
+	save_stats();
 	header('Content-Type: application/json');
 	echo json_encode($data);
 	exit();
@@ -32,6 +64,8 @@ function send_json($data) {
 function send_json_error($message) {
 	send_json(array('error' => $message));
 }
+
+load_stats();
 
 if (!empty($_GET['id'])) {
 	$id = $_GET['id'];
@@ -48,6 +82,7 @@ if (!empty($_GET['id'])) {
 
 	if ($isVanity) {
 		$id = steam_api_resolve_vanity($id);
+		$stats['SteamAPI']['ResolveVanityURL']++;
 		if (!$id) {
 			send_json_error('Profile not found with that vanity url.');
 		}
@@ -55,6 +90,7 @@ if (!empty($_GET['id'])) {
 
 	$statusName = array('Offline', 'Online', 'Busy', 'Away', 'Snooze', 'Looking to Trade', 'Looking to Play');
 	$summary = steam_api_get_summary($id);
+	$stats['SteamAPI']['GetPlayerSummaries']++;
 	if (!$summary) {
 		send_json_error('Profile not found.');
 	} else if ($summary['communityvisibilitystate'] == 1) {
@@ -140,6 +176,7 @@ if (!empty($_GET['id'])) {
 		</header>
 
 		<div id="faq">
+
 			<h2>FAQ</h2>
 
 			<h3>What is this?</h3>
@@ -153,6 +190,8 @@ if (!empty($_GET['id'])) {
 		</div>
 
 		<footer>
+			<p><?php echo 'Steam API requests today: ', ($stats['SteamAPI']['ResolveVanityURL'] + $stats['SteamAPI']['GetPlayerSummaries']); ?></p>
+
 			<p>Created by <a href="http://goncalomb.com">Gonçalo Baltazar</a> (<a href="http://steamcommunity.com/id/goncalomb" target="_blank">Steam</a>), 2014. <br><small>Using <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3</a> (<a href="http://bootswatch.com/darkly/" target="_blank">darkly</a>). <a href="http://steampowered.com/" target="_blank">Powered by Steam</a>.</p>
 		</footer>
 	</body>
