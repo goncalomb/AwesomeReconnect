@@ -95,5 +95,14 @@ header h1, header form, header .alert, footer {
 #faq {
 	text-align: center;
 	width: 800px;
-	margin: 0 auto 40px;
+	margin: 0 auto 30px;
+}
+
+#buttons {
+	margin: 0 auto 30px;
+	text-align: center;
+}
+
+#buttons .btn {
+	font-size: 20px;
 }

@@ -128,6 +128,7 @@ if (!empty($_GET['id'])) {
 		<title>Awesome Reconnect</title>
 
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootswatch/3.1.1.1/darkly/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/fontawesome/4.0.3/css/font-awesome.min.css">
 		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="main.css">
@@ -185,8 +186,11 @@ if (!empty($_GET['id'])) {
 			<h3>Why create this?</h3>
 			<p>I enjoy playing <a href="http://store.steampowered.com/app/204300/" target="_blank">Awesomenauts</a>, but sadly it lacks a rejoin button. When for some reason I lose the connection there is no way to find the same match. So I created this to keep track of the last match.</p>
 
-			<h3>How?</h3>
-			<p>Want to know how it works? <a href="https://github.com/goncalomb/AwesomeReconnect" target="_blank">Find the code on <strong>GitHub</strong></a>.</p>
+		</div>
+
+		<div id="buttons">
+			<a class="btn btn-primary" href="http://www.awesomenauts.com/forum/viewtopic.php?f=6&amp;t=29536" target="_blank"><i class="fa fa-file-text"></i> Forum Topic</a>
+			<a class="btn btn-primary" href="https://github.com/goncalomb/AwesomeReconnect" target="_blank"><i class="fa fa-github"></i> Code on GitHub</a>
 		</div>
 
 		<footer>
