@@ -196,7 +196,7 @@ if (!empty($_GET['id'])) {
 		<footer>
 			<p><?php echo 'Steam API requests today: ', ($stats['SteamAPI']['ResolveVanityURL'] + $stats['SteamAPI']['GetPlayerSummaries']); ?></p>
 
-			<p>Created by <a href="http://goncalomb.com">Gonçalo Baltazar</a> (<a href="http://steamcommunity.com/id/goncalomb" target="_blank">Steam</a>), 2014. <br><small>Using <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3</a> (<a href="http://bootswatch.com/darkly/" target="_blank">darkly</a>). <a href="http://steampowered.com/" target="_blank">Powered by Steam</a>.</p>
+			<p>Created by <a href="http://goncalomb.com">Gonçalo Baltazar</a> (<a href="http://steamcommunity.com/id/goncalomb" target="_blank">Steam</a>), 2014. <br><small>Using <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3</a> (<a href="http://bootswatch.com/darkly/" target="_blank">darkly</a>) and <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a>. <a href="http://steampowered.com/" target="_blank">Powered by Steam</a>.</p>
 		</footer>
 	</body>
 
