@@ -181,10 +181,13 @@ if (!empty($_GET['id'])) {
 			<h2>FAQ</h2>
 
 			<h3>What is this?</h3>
-			<p>Insert your SteamID, the site will ping your Steam profile every minute, keeping track of the last game/server that you were playing on, allowing you to rejoin if the connecting is lost.</p>
+			<p>Insert your SteamID, the site will ping your Steam profile every minute, keeping track of the last game/server that you were playing on, allowing you to rejoin if the connection is lost.</p>
 
 			<h3>Why create this?</h3>
-			<p>I enjoy playing <a href="http://store.steampowered.com/app/204300/" target="_blank">Awesomenauts</a>, but sadly it lacks a rejoin button. When for some reason I lose the connection there is no way to find the same match. So I created this to keep track of the last match.</p>
+			<p>I enjoy playing <a href="http://store.steampowered.com/app/204300/" target="_blank">Awesomenauts</a>, but sadly it lacks a rejoin button. When for some reason I lose the connection there is no way to find the same match, now, this keeps track of it for me.</p>
+
+			<h3>Does it work with all online Steam games?</h3>
+			<p>No, only with games that use Steam based servers. With supported games you will see a 'Join' button on your profile (and here) while playing.</p>
 
 		</div>
 
