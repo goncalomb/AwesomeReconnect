@@ -1,4 +1,11 @@
 <?php
+/*
+ * Copyright (c) 2014 Gonçalo Baltazar <me@goncalomb.com>
+ *
+ * Awesome Reconnect is released under the terms of the MIT License,
+ * check the file LICENSE.txt.
+ *
+ */
 
 /* http://steamcommunity.com/dev */
 define('STEAM_API_KEY', '{YOUR_STEAM_API_KEY}');
