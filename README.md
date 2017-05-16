@@ -1,15 +1,9 @@
-Awesome Reconnect
-===
+# Awesome Reconnect #
 
 A reconnect button for online Steam games!
 
 **[awreconn.goncalomb.com](http://awreconn.goncalomb.com)**
 
-License
----
+## License ##
 
-Awesome Reconnect is released under the terms of the MIT License, check the file LICENSE.txt.
-
----
-
-**[goncalomb](http://goncalomb.com)** - 2014
+Awesome Reconnect is released under the terms of the MIT License. See [LICENSE.txt](LICENSE.txt) for details.

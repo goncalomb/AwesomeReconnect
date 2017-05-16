@@ -1,10 +1,9 @@
 <?php
 /*
- * Copyright (c) 2014 Gonçalo Baltazar <me@goncalomb.com>
+ * Copyright (c) 2014, 2017 Gonçalo Baltazar <me@goncalomb.com>
  *
- * Awesome Reconnect is released under the terms of the MIT License,
- * check the file LICENSE.txt.
- *
+ * Awesome Reconnect is released under the terms of the MIT License.
+ * See LICENSE.txt for details.
  */
 
 /* http://steamcommunity.com/dev */
