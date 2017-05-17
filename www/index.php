@@ -9,6 +9,29 @@
 /* http://steamcommunity.com/dev */
 define('STEAM_API_KEY', '{YOUR_STEAM_API_KEY}');
 
+function http_request($url) {
+	if (function_exists('curl_init')) {
+		$ch = curl_init();
+		curl_setopt_array($ch, array(
+			CURLOPT_URL => $url,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_FOLLOWLOCATION => true
+		));
+		$data = curl_exec($ch);
+		if (curl_error($ch)) {
+			trigger_error(curl_error($ch), E_USER_ERROR);
+		}
+		$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		if ($status != 200) {
+			trigger_error("http_request ({$url}) failed with status code {$status} (!= 200)", E_USER_ERROR);
+		}
+		curl_close($ch);
+		return $data;
+	} else {
+		return file_get_contents($url);
+	}
+}
+
 function steam_api_request($method, $params=array()) {
 	$params['key'] = STEAM_API_KEY;
 	$params['format'] = 'json';
@@ -16,7 +39,7 @@ function steam_api_request($method, $params=array()) {
 	foreach ($params as $key => $value) {
 		$query[] = urlencode($key) . '=' . urlencode($value);
 	}
-	return @json_decode(file_get_contents('http://api.steampowered.com/' . $method . '/?' . implode('&', $query)), true);
+	return json_decode(http_request('http://api.steampowered.com/' . $method . '/?' . implode('&', $query)), true);
 }
 
 function steam_api_get_summary($steamid) {
@@ -56,7 +79,7 @@ function load_stats() {
 function save_stats() {
 	global $stats;
 	if ($stats !== null) {
-		file_put_contents('stats.json.txt', json_encode($stats, JSON_PRETTY_PRINT));
+		@file_put_contents('stats.json.txt', json_encode($stats, JSON_PRETTY_PRINT));
 	}
 }
 
