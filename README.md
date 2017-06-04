@@ -2,7 +2,7 @@
 
 A reconnect button for online Steam games!
 
-**[awreconn.goncalomb.com](http://awreconn.goncalomb.com)**
+**[awreconn.goncalomb.com](https://awreconn.goncalomb.com)**
 
 ## License ##
 
