@@ -1,13 +1,15 @@
 <?php
 /*
- * Copyright (c) 2014, 2017 Gonçalo Baltazar <me@goncalomb.com>
+ * Copyright (c) 2014, 2017, 2020 Gonçalo Baltazar <me@goncalomb.com>
  *
  * Awesome Reconnect is released under the terms of the MIT License.
  * See LICENSE.txt for details.
  */
 
+ini_set('display_errors', 0);
+
 /* http://steamcommunity.com/dev */
-define('STEAM_API_KEY', '{YOUR_STEAM_API_KEY}');
+define('STEAM_API_KEY', getenv('STEAM_API_KEY'));
 
 function http_request($url) {
 	if (function_exists('curl_init')) {
